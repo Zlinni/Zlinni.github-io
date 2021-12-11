@@ -103,5 +103,9 @@ cursor:url(https://cdn.custom-cursor.com/db/7248/32/starter-3d-effect-cursor-cur
 a,img,button{
 cursor:url(https://cdn.custom-cursor.com/db/7247/32/starter-3d-effect-cursor-pointer.png) , pointer!important;
 }
+#nav .menus_items .menus_item .menus_item_child{
+border-radius:15px;
+}
+
 //leancloud:yPV76XNhFIiEQs8P2sM5otbm-MdYXbMMI,BpEFA9kXc8EDEhyuW8cUcxvQ,https://ypv76xnh.api.lncldglobal.com
 //leancloud:yPV76XNhFIiEQs8P2sM5otbm-MdYXbMMI,BpEFA9kXc8EDEhyuW8cUcxvQ,https://ypv76xnh.api.lncldglobal.com
