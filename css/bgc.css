@@ -97,5 +97,11 @@ background:url(../img/boji.jpg);
 background-size:cover;
 z-index:99;
 }
+body{
+cursor:url(https://cdn.custom-cursor.com/db/7248/32/starter-3d-effect-cursor-cursor.png) , default!important;
+}
+a,img,button{
+cursor:url(https://cdn.custom-cursor.com/db/7247/32/starter-3d-effect-cursor-pointer.png) , pointer!important;
+}
 //leancloud:yPV76XNhFIiEQs8P2sM5otbm-MdYXbMMI,BpEFA9kXc8EDEhyuW8cUcxvQ,https://ypv76xnh.api.lncldglobal.com
 //leancloud:yPV76XNhFIiEQs8P2sM5otbm-MdYXbMMI,BpEFA9kXc8EDEhyuW8cUcxvQ,https://ypv76xnh.api.lncldglobal.com
