@@ -28,7 +28,7 @@
 .gitcalendar-graph{
     padding: 15px 10px 0px !important;
 }
-.avatar-img,#card-info-btn{
+#card-info-btn{
    border:2px solid #0ff5ff;
    box-shadow: 1px 1px 20px #0ff5ff !important;
 }
@@ -56,6 +56,47 @@ color:#e364d7 !important;
 .author-info__description{
 font-size:19px;
 }
+.avatar-img{
+display: flex;
+justify-content: center;
+align-items: center;
+overflow:visible;
+border-radius:55px;
+box-shadow: 0 0 10px black;
+background:linear-gradient(135deg,rgb(1,255,234),rgb(255,251,14),rgb(0,238,255));
+animation: color 3s linear infinite;
+transition: all 0.5s;
+}
+.avatar-img:hover{
+            box-shadow: 0 0 15px 0 #000;
+}
+@keyframes color {
+            to{
+                filter: hue-rotate(360deg);
+            }
+}
+.avatar-img img{
+width:100px;
+height:100px;
+border-radius:50px;
+background-size:cover;
 
+}
+.centerBox{
+display: flex;
+flex-direction: column;
+//justify-content: center;
+align-items: center;
+}
+.newheadBox{
+position:absolute;
+top:25px;
+width:100px;
+height:100px;
+border-radius:50px;
+background:url(../img/boji.jpg);
+background-size:cover;
+z-index:99;
+}
 //leancloud:yPV76XNhFIiEQs8P2sM5otbm-MdYXbMMI,BpEFA9kXc8EDEhyuW8cUcxvQ,https://ypv76xnh.api.lncldglobal.com
 //leancloud:yPV76XNhFIiEQs8P2sM5otbm-MdYXbMMI,BpEFA9kXc8EDEhyuW8cUcxvQ,https://ypv76xnh.api.lncldglobal.com
