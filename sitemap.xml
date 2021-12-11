@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://zlinni.github.io/messageboard/index.html</loc>
+    
+    <lastmod>2021-12-11</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://zlinni.github.io/2021/11/30/Node-js/</loc>
     
     <lastmod>2021-12-09</lastmod>
@@ -146,15 +155,6 @@
   </url>
   
   <url>
-    <loc>https://zlinni.github.io/messageboard/index.html</loc>
-    
-    <lastmod>2021-11-30</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://zlinni.github.io/link/index.html</loc>
     
     <lastmod>2021-11-30</lastmod>
@@ -205,14 +205,14 @@
   </url>
   
   <url>
-    <loc>https://zlinni.github.io/tags/css/</loc>
+    <loc>https://zlinni.github.io/tags/es6/</loc>
     <lastmod>2021-12-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://zlinni.github.io/tags/es6/</loc>
+    <loc>https://zlinni.github.io/tags/css/</loc>
     <lastmod>2021-12-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -261,13 +261,6 @@
   </url>
   
   <url>
-    <loc>https://zlinni.github.io/tags/%E9%9D%A2%E8%AF%95/</loc>
-    <lastmod>2021-12-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://zlinni.github.io/tags/js/</loc>
     <lastmod>2021-12-11</lastmod>
     <changefreq>weekly</changefreq>
@@ -276,6 +269,13 @@
   
   <url>
     <loc>https://zlinni.github.io/tags/Jquery/</loc>
+    <lastmod>2021-12-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://zlinni.github.io/tags/Linux/</loc>
     <lastmod>2021-12-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -296,7 +296,7 @@
   </url>
   
   <url>
-    <loc>https://zlinni.github.io/tags/Linux/</loc>
+    <loc>https://zlinni.github.io/tags/%E9%9D%A2%E8%AF%95/</loc>
     <lastmod>2021-12-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
