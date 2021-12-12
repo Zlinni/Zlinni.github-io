@@ -1,7 +1,7 @@
 /* 文章页背景 */
-.layout_post>#post {
+#post {
     /* 以下代表白色透明度为0.3 */
-    background: rgba(255,255,255,.3) !important;
+    background:rgba(0,0,0,0.8)!important;
 }
 
 /* 所有背景（包括首页卡片、文章页、页面页等） */
@@ -106,6 +106,9 @@ cursor:url(https://cdn.custom-cursor.com/db/7247/32/starter-3d-effect-cursor-poi
 }
 #nav .menus_items .menus_item .menus_item_child{
 border-radius:15px;
+}
+.layout > div:first-child:not(.recent-posts){
+
 }
 
 //leancloud:yPV76XNhFIiEQs8P2sM5otbm-MdYXbMMI,BpEFA9kXc8EDEhyuW8cUcxvQ,https://ypv76xnh.api.lncldglobal.com

@@ -11,15 +11,6 @@
   </url>
   
   <url>
-    <loc>https://zlinni.github.io/posts/cb2613cee094/</loc>
-    
-    <lastmod>2021-12-12</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://zlinni.github.io/messageboard/index.html</loc>
     
     <lastmod>2021-12-11</lastmod>
@@ -221,13 +212,6 @@
   </url>
   
   <url>
-    <loc>https://zlinni.github.io/tags/es6/</loc>
-    <lastmod>2021-12-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://zlinni.github.io/tags/Echarts/</loc>
     <lastmod>2021-12-12</lastmod>
     <changefreq>weekly</changefreq>
@@ -236,6 +220,13 @@
   
   <url>
     <loc>https://zlinni.github.io/tags/HTML/</loc>
+    <lastmod>2021-12-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://zlinni.github.io/tags/es6/</loc>
     <lastmod>2021-12-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -284,6 +275,13 @@
   </url>
   
   <url>
+    <loc>https://zlinni.github.io/tags/Jquery/</loc>
+    <lastmod>2021-12-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://zlinni.github.io/tags/nodejs/</loc>
     <lastmod>2021-12-12</lastmod>
     <changefreq>weekly</changefreq>
@@ -292,13 +290,6 @@
   
   <url>
     <loc>https://zlinni.github.io/tags/mongodb/</loc>
-    <lastmod>2021-12-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://zlinni.github.io/tags/Jquery/</loc>
     <lastmod>2021-12-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
