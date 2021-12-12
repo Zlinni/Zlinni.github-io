@@ -1,5 +1,8 @@
-var iscenterBox = document.getElementsByClassName('is-center')[4];
-iscenterBox.classList.add('centerBox');
+var iscenterBox = document.getElementsByClassName('is-center');
+console.log(window.location);
+iscenterBox[4].classList.add('centerBox');
+iscenterBox[10].classList.add('centerBox');
 var newheadBox = document.createElement('div');
 newheadBox.classList.add('newheadBox');
-iscenterBox.insertBefore(newheadBox, iscenterBox.childNodes[0]);
+iscenterBox[4].insertBefore(newheadBox, iscenterBox[4].childNodes[0]);
+iscenterBox[10].insertBefore(newheadBox, iscenterBox[10].childNodes[0]);
