@@ -11,7 +11,6 @@
     border:2px solid #0ff5ff;
     box-shadow: 1px 1px 10px #0ff5ff !important;
 }
-
 [data-theme='dark'] #web_bg:before, [data-theme='dark'] #footer:before, [data-theme='dark'] #page-header:before {
     position: absolute;
     width: 100%;
@@ -28,31 +27,8 @@
 .gitcalendar-graph{
     padding: 15px 10px 0px !important;
 }
-#card-info-btn{
-   border:2px solid #0ff5ff;
-   box-shadow: 1px 1px 20px #0ff5ff !important;
-}
-#card-info-btn{
-   background-color:transparent !important;	
-}
-.button--animated:before{
-   background:#0ff5ff;
-}
-.card-widget{
-    background:rgba(0,0,0,0.7) !important;
-    border:2px solid #ea03f8 !important;
-    box-shadow: 1px 1px 20px #ea03f8 !important;
-}
-[data-theme='dark']{
---font-color:#fdeacc;
---text-highlight-color:#fdeacc;
-}
-[data-theme=dark] .clock-row{
-color:#fdeacc !important;
-}
-#subtitle,#site-title{
-color:#e364d7 !important;
-}
+
+
 .author-info__description{
 font-size:19px;
 }
