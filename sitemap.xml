@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://zlinni.github.io/posts/66e2d24f7085/</loc>
+    
+    <lastmod>2021-12-14</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://zlinni.github.io/posts/2d51252021cb/</loc>
     
     <lastmod>2021-12-14</lastmod>
@@ -102,15 +111,6 @@
   
   <url>
     <loc>https://zlinni.github.io/posts/d7ed1be8a814/</loc>
-    
-    <lastmod>2021-12-13</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://zlinni.github.io/posts/66e2d24f7085/</loc>
     
     <lastmod>2021-12-13</lastmod>
     
@@ -221,14 +221,14 @@
   </url>
   
   <url>
-    <loc>https://zlinni.github.io/tags/Echarts/</loc>
+    <loc>https://zlinni.github.io/tags/es6/</loc>
     <lastmod>2021-12-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://zlinni.github.io/tags/es6/</loc>
+    <loc>https://zlinni.github.io/tags/Echarts/</loc>
     <lastmod>2021-12-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -263,14 +263,14 @@
   </url>
   
   <url>
-    <loc>https://zlinni.github.io/tags/%E9%AD%94%E6%94%B9/</loc>
+    <loc>https://zlinni.github.io/tags/Vue/</loc>
     <lastmod>2021-12-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://zlinni.github.io/tags/Vue/</loc>
+    <loc>https://zlinni.github.io/tags/%E9%AD%94%E6%94%B9/</loc>
     <lastmod>2021-12-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -285,6 +285,13 @@
   
   <url>
     <loc>https://zlinni.github.io/tags/js/</loc>
+    <lastmod>2021-12-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://zlinni.github.io/tags/Jquery/</loc>
     <lastmod>2021-12-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -306,13 +313,6 @@
   
   <url>
     <loc>https://zlinni.github.io/tags/Linux/</loc>
-    <lastmod>2021-12-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://zlinni.github.io/tags/Jquery/</loc>
     <lastmod>2021-12-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
