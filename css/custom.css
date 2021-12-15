@@ -28,7 +28,6 @@ text-align:center;
     pointer-events: none;
     text-shadow: -1px -1px 0 #fff;    //阴影
 }
-/*颜色大小*/
 .aplayer .aplayer-lrc p {
 color: #0ff5ff !important;
 }

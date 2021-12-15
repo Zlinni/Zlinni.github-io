@@ -200,7 +200,7 @@
 
   
   <url>
-    <loc>https://zlinni.github.io/tags/Echarts/</loc>
+    <loc>https://zlinni.github.io/tags/Ajax/</loc>
     <lastmod>2021-12-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -214,14 +214,7 @@
   </url>
   
   <url>
-    <loc>https://zlinni.github.io/tags/Ajax/</loc>
-    <lastmod>2021-12-15</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://zlinni.github.io/tags/css/</loc>
+    <loc>https://zlinni.github.io/tags/Echarts/</loc>
     <lastmod>2021-12-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -229,6 +222,13 @@
   
   <url>
     <loc>https://zlinni.github.io/tags/HTML/</loc>
+    <lastmod>2021-12-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://zlinni.github.io/tags/css/</loc>
     <lastmod>2021-12-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -270,6 +270,13 @@
   </url>
   
   <url>
+    <loc>https://zlinni.github.io/tags/%E9%9D%A2%E8%AF%95/</loc>
+    <lastmod>2021-12-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://zlinni.github.io/tags/es6/</loc>
     <lastmod>2021-12-15</lastmod>
     <changefreq>weekly</changefreq>
@@ -284,21 +291,7 @@
   </url>
   
   <url>
-    <loc>https://zlinni.github.io/tags/%E9%9D%A2%E8%AF%95/</loc>
-    <lastmod>2021-12-15</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://zlinni.github.io/tags/Jquery/</loc>
-    <lastmod>2021-12-15</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://zlinni.github.io/tags/Linux/</loc>
     <lastmod>2021-12-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -313,6 +306,13 @@
   
   <url>
     <loc>https://zlinni.github.io/tags/mongodb/</loc>
+    <lastmod>2021-12-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://zlinni.github.io/tags/Linux/</loc>
     <lastmod>2021-12-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
