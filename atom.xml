@@ -242,9 +242,9 @@
     <category term="前端进阶" scheme="https://zlinni.github.io/categories/%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6/"/>
     
     
-    <category term="Ajax" scheme="https://zlinni.github.io/tags/Ajax/"/>
-    
     <category term="前端" scheme="https://zlinni.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="Ajax" scheme="https://zlinni.github.io/tags/Ajax/"/>
     
   </entry>
   
@@ -320,9 +320,9 @@
     <category term="前端基础" scheme="https://zlinni.github.io/categories/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/"/>
     
     
-    <category term="前端" scheme="https://zlinni.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
-    
     <category term="css" scheme="https://zlinni.github.io/tags/css/"/>
+    
+    <category term="前端" scheme="https://zlinni.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
     
   </entry>
   
