@@ -3,12 +3,17 @@
     /* 以下代表白色透明度为0.3 */
     background: rgba(0,0,0,0.7) !important;
     border:2px solid #0ff5ff;
+}
+.recent-post-item:hover{
     box-shadow: 1px 1px 10px #0ff5ff !important;
 }
 #git_container,#archive,#page{
     background:rgba(0,0,0,0.7);
     border: 2px solid #0ff5ff !important;
-    box-shadow: 1px 1px 20px #0ff5ff !important;
+  
+}
+#git_container:hover{
+  box-shadow: 1px 1px 20px #0ff5ff !important;
 }
 /*收藏博客的边框*/
 .card-info #card-info-btn {
@@ -23,6 +28,8 @@
 .card-widget{
     background:rgba(0,0,0,0.7) !important;
     border:2px solid #ea03f8 !important;
+}
+.card-widget:hover{
     box-shadow: 1px 1px 20px #ea03f8 !important;
 }
 /*主题下面的字体颜色*/
