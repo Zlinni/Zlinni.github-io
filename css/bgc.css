@@ -1,6 +1,9 @@
+
 /* 文章页背景 */
-#post {
-    /* 以下代表白色透明度为0.3 */
+.post {
+    background:rgba(0,0,0,0.7)!important;
+}
+#post{
     background:rgba(0,0,0,0.8)!important;
 }
 
