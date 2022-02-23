@@ -171,7 +171,7 @@
       
       <categories>
           
-          <category> 设计 </category>
+          <category> 前端进阶 </category>
           
       </categories>
       
@@ -179,8 +179,6 @@
         <tags>
             
             <tag> 前端 </tag>
-            
-            <tag> 设计 </tag>
             
         </tags>
       
@@ -318,7 +316,7 @@
     
     
     <entry>
-      <title>主页动画处理</title>
+      <title>Animation主页动画处理</title>
       <link href="/posts/0368fe1c5ab9/"/>
       <url>/posts/0368fe1c5ab9/</url>
       
@@ -445,7 +443,7 @@
     
     
     <entry>
-      <title>Butterfly魔改合集(日更状态)</title>
+      <title>Butterfly魔改合集</title>
       <link href="/posts/2d51252021cb/"/>
       <url>/posts/2d51252021cb/</url>
       
