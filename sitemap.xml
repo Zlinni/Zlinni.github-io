@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://zlinni.github.io/posts/5a2ea4345d0a/</loc>
+    
+    <lastmod>2022-02-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://zlinni.github.io/posts/2d20c31c4911/</loc>
     
     <lastmod>2022-02-27</lastmod>
@@ -23,15 +32,6 @@
     <loc>https://zlinni.github.io/posts/5e2ce1604d71/</loc>
     
     <lastmod>2022-02-27</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://zlinni.github.io/posts/5a2ea4345d0a/</loc>
-    
-    <lastmod>2022-02-25</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
