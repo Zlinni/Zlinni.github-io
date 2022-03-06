@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>深入浅出vue.js</title>
+      <link href="/posts/885b6d5d3821/"/>
+      <url>/posts/885b6d5d3821/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div class="tip cogs"><p>记录《深入浅出Vue.js》这本书中的内容，以笔记的形式了解vue之中涉及的部分原理</p></div><h1 id="章一-变化侦测"><a href="#章一-变化侦测" class="headerlink" title="章一 变化侦测"></a>章一 变化侦测</h1><div class="tip "><p>vue的特性之一就是响应式系统，我们在学习的过程中知道它是通过侦测数据的变化进行视图的更新，而具体到其中的原理是什么呢？</p></div><h2 id="推和拉"><a href="#推和拉" class="headerlink" title="推和拉"></a>推和拉</h2><p>变化侦测分为两种类型 一种是推一种是拉。<br>在Angular和React里面，变化侦测的内容属于”拉“，意思是当状态发生变化的时候，它不知道哪个状态改变了。只知道状态有可能变了。然后发送一个信号告诉框架。<br>而在Vue当中，变化侦测属于”推”。当状态发送改变的时候，vue立刻就知道了，然后在一定程度上知道哪些状态变了。意味着vue能进行颗粒度更细的更新。</p><h2 id="颗粒度"><a href="#颗粒度" class="headerlink" title="颗粒度"></a>颗粒度</h2><p>所谓颗粒度呢，就是指某一个状态在发生更新的时候，会影响到多少节点。举个例子来说，假如一个状态绑定着很多个依赖，此时每个依赖表示一个具体的DOM节点，当这个状态改变的时候，会向所有依赖发出通知，进行更新操作。<br>因此颗粒度越细，开销也就越大，所以vue将粒度调为中等，同时将依赖绑定的DOM节点换为了组件。</p><h2 id="如何追踪变化"><a href="#如何追踪变化" class="headerlink" title="如何追踪变化"></a>如何追踪变化</h2><p>vue中，先前的版本里，es6对浏览器的支持并不理想，所以采取了<code>defineProperty</code>的方法而非<code>Proxy</code>，通过前者的方法可以很容易的侦测对象的变化，并用getter/setter来对对象进行响应式的处理。</p><h2 id="如何收集依赖"><a href="#如何收集依赖" class="headerlink" title="如何收集依赖"></a>如何收集依赖</h2><p>在本节中，依赖的收集其实是使用到了getter，触发依赖使用到了setter。</p><h2 id="依赖收集在哪里？"><a href="#依赖收集在哪里？" class="headerlink" title="依赖收集在哪里？"></a>依赖收集在哪里？</h2><p>很清晰的理解，知道要收集依赖，那么势必有保存依赖的地方，而这个地方最好是唯一的，全局性的，因为</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端进阶 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 前端 </tag>
+            
+            <tag> Vue </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>CDN内容分发网络</title>
       <link href="/posts/5e2ce1604d71/"/>
       <url>/posts/5e2ce1604d71/</url>
