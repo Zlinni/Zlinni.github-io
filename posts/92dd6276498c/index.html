@@ -1,0 +1,311 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>FooTok项目杂谈 | Zlinni's Blog For Study</title><meta name="keywords" content="前端,Vue"><meta name="author" content="Zlinni"><meta name="copyright" content="Zlinni"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="前言老项目新谈，用vue3重构ing  主题演示待填充… 构建工具+技术栈编译软件：vscode开发框架: vue3打包工具：viteUI：element-plusicon：阿里巴巴其他：pinia， vue-router，git插件：pubsub，nanoid，less-loader后端： nodejs，mysql part0 路由&amp;pinia定义路由，以及重定向。当时在router里面">
+<meta property="og:type" content="article">
+<meta property="og:title" content="FooTok项目杂谈">
+<meta property="og:url" content="https://zlinni.github.io/posts/92dd6276498c/index.html">
+<meta property="og:site_name" content="Zlinni&#39;s Blog For Study">
+<meta property="og:description" content="前言老项目新谈，用vue3重构ing  主题演示待填充… 构建工具+技术栈编译软件：vscode开发框架: vue3打包工具：viteUI：element-plusicon：阿里巴巴其他：pinia， vue-router，git插件：pubsub，nanoid，less-loader后端： nodejs，mysql part0 路由&amp;pinia定义路由，以及重定向。当时在router里面">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://zlinni.github.io/img/vue%E7%B3%BB%E5%88%97/footok%E9%A1%B9%E7%9B%AE%E6%9D%82%E8%B0%88.jpg">
+<meta property="article:published_time" content="2022-03-24T14:33:23.000Z">
+<meta property="article:modified_time" content="2022-03-24T15:11:20.023Z">
+<meta property="article:author" content="Zlinni">
+<meta property="article:tag" content="前端">
+<meta property="article:tag" content="Vue">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://zlinni.github.io/img/vue%E7%B3%BB%E5%88%97/footok%E9%A1%B9%E7%9B%AE%E6%9D%82%E8%B0%88.jpg"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://zlinni.github.io/posts/92dd6276498c/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="manifest" href="/manifest.json"/><meta name="msapplication-TileColor" content="#000000"/><link rel="apple-touch-icon" sizes="180x180" href="/img/siteicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/img/siteicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/img/siteicon/favicon-16x16.png"/><link rel="mask-icon" href="/img/siteicon/safari-pinned-tab.svg" color="#5bbad5"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: {"limitDay":500,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: Zlinni","link":"链接: ","source":"来源: Zlinni's Blog For Study","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"top-right"},
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: true,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'FooTok项目杂谈',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-03-24 23:11:20'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    document.addEventListener('pjax:complete', detectApple)})(window)</script><link data-pjax rel="stylesheet" href="/css/bgc.css"><link data-pjax rel="stylesheet" href="/css/neonlight.css"><link data-pjax rel="stylesheet" href="/css/custom.css"><link data-pjax rel="stylesheet" href="/css/aplayer.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" media="defer" onload="this.media='all'"><div class="aplayer" data-id="7123261369" data-server="netease" data-type="playlist" data-fixed="true" data-listFolded="false" data-order="list" data-preload="none"></div><link rel="stylesheet" href="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.css"><script src="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.js"></script><script src="./lib/Meting.min.js"></script><!-- hexo injector head_end start --><link rel="stylesheet" href="https://unpkg.zhimg.com/hexo-butterfly-clock/lib/clock.min.css" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-filter-gitcalendar/lib/gitcalendar.css"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css" media="defer" onload="this.media='all'"><script src="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js"></script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Zlinni's Blog For Study" type="application/atom+xml">
+</head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/img/head/boji.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">38</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">23</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-heart"></i><span> 闲言碎语</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/artitalk/"><i class="fa-fw fas fa-comment-dots"></i><span> 日常吐槽</span></a></li><li><a class="site-page child" href="/messageboard/"><i class="fa-fw fas fa-comment-dots"></i><span> 留个说法</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/"><i class="fa-fw fa fa-bookmark"></i><span> 前端基础</span></a></li><li><a class="site-page child" href="/categories/%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6/"><i class="fa-fw fa fa-bookmark"></i><span> 前端进阶</span></a></li><li><a class="site-page child" href="/categories/%E7%A8%8B%E5%BA%8F%E5%91%98%E5%BF%85%E4%BF%AE/"><i class="fa-fw fa fa-bookmark"></i><span> 程序员必修</span></a></li><li><a class="site-page child" href="/categories/%E9%9D%A2%E8%AF%95/"><i class="fa-fw fa fa-bookmark"></i><span> 面试</span></a></li><li><a class="site-page child" href="/categories/%E9%AD%94%E6%94%B9/"><i class="fa-fw fa fa-bookmark"></i><span> 魔改</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 镜像网站</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="https://zlinni.gitee.io/"><i class="fa-fw fa fa-link"></i><span> gitee</span></a></li><li><a class="site-page child" href="https://zlinni.github.io/"><i class="fa-fw fa fa-link"></i><span> github</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-desktop"></i><span> 关于本站</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-user-tag"></i><span> 和我无关</span></a></li><li><a class="site-page child" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友情链接</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/./img/vue%E7%B3%BB%E5%88%97/footok%E9%A1%B9%E7%9B%AE%E6%9D%82%E8%B0%88.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Zlinni's Blog For Study</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-heart"></i><span> 闲言碎语</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/artitalk/"><i class="fa-fw fas fa-comment-dots"></i><span> 日常吐槽</span></a></li><li><a class="site-page child" href="/messageboard/"><i class="fa-fw fas fa-comment-dots"></i><span> 留个说法</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/"><i class="fa-fw fa fa-bookmark"></i><span> 前端基础</span></a></li><li><a class="site-page child" href="/categories/%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6/"><i class="fa-fw fa fa-bookmark"></i><span> 前端进阶</span></a></li><li><a class="site-page child" href="/categories/%E7%A8%8B%E5%BA%8F%E5%91%98%E5%BF%85%E4%BF%AE/"><i class="fa-fw fa fa-bookmark"></i><span> 程序员必修</span></a></li><li><a class="site-page child" href="/categories/%E9%9D%A2%E8%AF%95/"><i class="fa-fw fa fa-bookmark"></i><span> 面试</span></a></li><li><a class="site-page child" href="/categories/%E9%AD%94%E6%94%B9/"><i class="fa-fw fa fa-bookmark"></i><span> 魔改</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 镜像网站</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="https://zlinni.gitee.io/"><i class="fa-fw fa fa-link"></i><span> gitee</span></a></li><li><a class="site-page child" href="https://zlinni.github.io/"><i class="fa-fw fa fa-link"></i><span> github</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-desktop"></i><span> 关于本站</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-user-tag"></i><span> 和我无关</span></a></li><li><a class="site-page child" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友情链接</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">FooTok项目杂谈</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-03-24T14:33:23.000Z" title="发表于 2022-03-24 22:33:23">2022-03-24</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-03-24T15:11:20.023Z" title="更新于 2022-03-24 23:11:20">2022-03-24</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6/">前端进阶</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1,127</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>5分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="FooTok项目杂谈"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><div class="tip cogs"><p>老项目新谈，用vue3重构ing</p>
+</div>
+<h1 id="主题演示"><a href="#主题演示" class="headerlink" title="主题演示"></a>主题演示</h1><p>待填充…</p>
+<h1 id="构建工具-技术栈"><a href="#构建工具-技术栈" class="headerlink" title="构建工具+技术栈"></a>构建工具+技术栈</h1><p>编译软件：vscode<br>开发框架: vue3<br>打包工具：vite<br>UI：element-plus<br>icon：阿里巴巴<br>其他：pinia， vue-router，git<br>插件：pubsub，nanoid，less-loader<br>后端： nodejs，mysql</p>
+<h1 id="part0-路由-amp-pinia"><a href="#part0-路由-amp-pinia" class="headerlink" title="part0 路由&amp;pinia"></a>part0 路由&amp;pinia</h1><p>定义路由，以及重定向。<br>当时在router里面把路径写错了导致页面跳转问题出现。！！！<br>vue3的路由写法<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;</span><br><span class="line">    createRouter,</span><br><span class="line">    createWebHashHistory</span><br><span class="line">&#125; <span class="keyword">from</span> <span class="string">&quot;vue-router&quot;</span></span><br><span class="line"><span class="keyword">const</span> routes = [&#123;</span><br><span class="line">	xxxx</span><br><span class="line">&#125;]</span><br><span class="line"><span class="keyword">const</span> router = createRouter(&#123;</span><br><span class="line">    <span class="attr">history</span>: createWebHashHistory(),</span><br><span class="line">    routes,</span><br><span class="line">&#125;);</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> router</span><br></pre></td></tr></table></figure><br>pinia写法</p>
+<h1 id="part1-mainFrame"><a href="#part1-mainFrame" class="headerlink" title="part1 mainFrame"></a>part1 mainFrame</h1><div class="tip "><p>这个部分是关于整个页面框架的</p>
+</div>
+<h2 id="element-plus"><a href="#element-plus" class="headerlink" title="element-plus"></a>element-plus</h2><p>全局引入和按需引入，没什么好说的。注意的是官网的例子部分是ts，不太友好。</p>
+<h2 id="农历的类"><a href="#农历的类" class="headerlink" title="农历的类"></a>农历的类</h2><p>使用到了一个可以返回农历值的方法，将他封装了起来，放进了plugins。最后暴露方法出来。</p>
+<h2 id="css变量"><a href="#css变量" class="headerlink" title="css变量"></a>css变量</h2><p>这次使用了css变量来定义全部的颜色变量，方便后期修改<br><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://cdn.jsdelivr.net/gh/Zlinni/Pic/img/20220324225112.png" alt=""><br>注意使用css变量的框架不要设置<code>style:scoped</code>否则后面的读不出来数据。</p>
+<h1 id="part2-login"><a href="#part2-login" class="headerlink" title="part2 login"></a>part2 login</h1><div class="tip "><p>这个部分是关于login页面的</p>
+</div>
+<p>还待解决的问题：分辨率不同footok的标题向下位置不同</p>
+<h2 id="注册的判断"><a href="#注册的判断" class="headerlink" title="注册的判断"></a>注册的判断</h2><p>关于id的正则表达式：<code>/^[a-zA-Z0-9_-]&#123;4,16&#125;$/</code>（只支持字母，数字，下划线，减号）<br>关于密码的正则：<code>/^.*(?=.&#123;6,&#125;)(?=.*\d)(?=.*[A-Z])(?=.*[a-z]).*$/</code>（最少六位加大小写）<br>注意watch方法中，reactive的变量检测使用<code>()=&gt;obj.xxx</code><br>例子：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">watch(</span><br><span class="line">  <span class="function">() =&gt;</span> userData.password,</span><br><span class="line">  <span class="function">(<span class="params">newValue</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> patt = <span class="regexp">/^.*(?=.&#123;6,&#125;)(?=.*\d)(?=.*[A-Z])(?=.*[a-z]).*$/</span>;</span><br><span class="line">    <span class="keyword">if</span> (!patt.test(newValue)) &#123;</span><br><span class="line">      passwordTips.value = <span class="string">&quot;您的密码强度不够&quot;</span>;</span><br><span class="line">      isSuccess.passWordSuccess = <span class="literal">false</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      passwordTips.value = <span class="string">&quot;&quot;</span>;</span><br><span class="line">      isSuccess.passWordSuccess = <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">);</span><br></pre></td></tr></table></figure></p>
+<h2 id="登陆和注册以及axios"><a href="#登陆和注册以及axios" class="headerlink" title="登陆和注册以及axios"></a>登陆和注册以及axios</h2><p>发送：注意发送的时候不要发响应式的对象，因为后端不需要你的响应式对象，它需要一个普通对象，所以可以使用toRaw将你的数据变成普通对象之后发送。<br>接收：axios的问题是要知道code和数据来自哪里。这里发现后端发来的数据中，code来自data<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">axios</span><br><span class="line">  .post(<span class="string">&quot;http://localhost:3000/api/register&quot;</span>, rawData)</span><br><span class="line">  .then(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (res.data.code === <span class="number">200</span>) &#123;</span><br><span class="line">      sessionStorage.setItem(<span class="string">&quot;sid&quot;</span>, <span class="literal">true</span>);</span><br><span class="line">      router.push(&#123; <span class="attr">name</span>: <span class="string">&quot;index&quot;</span> &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">  .catch(<span class="function">(<span class="params">err</span>) =&gt;</span> &#123;</span><br><span class="line">    userNameTips.value = <span class="string">&quot;用户名已存在&quot;</span>;</span><br><span class="line">    isSuccess.userNameSuccess = <span class="literal">false</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(err)</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure><br>注册逻辑：200则注册成功，在session里面放sid，这样router里面就能放行，并且跳转。如果异常则是用户名已存在。（网络异常的判断？）<br>登陆逻辑：200登陆成功，否则用户名存在。<br>（登陆的优化？安全？token？jwt？）</p>
+<h1 id="part3-indexAside"><a href="#part3-indexAside" class="headerlink" title="part3 indexAside"></a>part3 indexAside</h1><div class="tip "><p>这个部分是关于两侧aside页面的</p>
+</div>
+<p>用到了视口单位进行了响应式。</p>
+<h1 id="part4-foodSwiper"><a href="#part4-foodSwiper" class="headerlink" title="part4 foodSwiper"></a>part4 foodSwiper</h1><div class="tip "><p>这个部分是关于轮播图页面的</p>
+</div>
+<h1 id="vite"><a href="#vite" class="headerlink" title="vite"></a>vite</h1><h2 id="链接hash问题"><a href="#链接hash问题" class="headerlink" title="链接hash问题"></a>链接hash问题</h2><p>vite会自动把链接变成哈希值，所以是不能直接引入某某链接的，需要使用一个方法<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//getAssetsImages.js</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> (<span class="params">fileName,imgName</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> URL(<span class="string">`/src/assets/img/<span class="subst">$&#123;fileName&#125;</span>/<span class="subst">$&#123;imgName&#125;</span>`</span>,</span><br><span class="line">        <span class="keyword">import</span>.meta.url).href;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>这个js由于使用的场景太多 直接封装之后放入了hook使用。后面考虑全局使用。</p>
+<h2 id="vite配置项的问题"><a href="#vite配置项的问题" class="headerlink" title="vite配置项的问题"></a>vite配置项的问题</h2><p>vite的配置项和之前vuecli不太一样，而且确保能完全使用它的功能，还需要将vite的版本升到最新。所以当时配置的时候删库重新init了vite项目，这个问题需要非常注意。<br>检验的方法是：init之后康康有没有<code>vite.config.js</code></p>
+<h2 id="具体配置"><a href="#具体配置" class="headerlink" title="具体配置"></a>具体配置</h2><p>代码<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;</span><br><span class="line">    defineConfig</span><br><span class="line">&#125; <span class="keyword">from</span> <span class="string">&#x27;vite&#x27;</span></span><br><span class="line"><span class="keyword">import</span> vue <span class="keyword">from</span> <span class="string">&#x27;@vitejs/plugin-vue&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// https://vitejs.dev/config/</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> defineConfig(&#123;</span><br><span class="line">    <span class="attr">plugins</span>: [vue()],</span><br><span class="line">    <span class="attr">base</span>: <span class="string">&#x27;./&#x27;</span>,</span><br><span class="line">    <span class="attr">build</span>: &#123;</span><br><span class="line">        <span class="attr">target</span>: <span class="string">&#x27;modules&#x27;</span>,</span><br><span class="line">        <span class="attr">outDir</span>: <span class="string">&#x27;dist&#x27;</span>, <span class="comment">//指定输出路径</span></span><br><span class="line">        <span class="attr">assetsDir</span>: <span class="string">&#x27;assets&#x27;</span>, <span class="comment">// 指定生成静态资源的存放路径</span></span><br><span class="line">        <span class="attr">minify</span>: <span class="string">&#x27;terser&#x27;</span> <span class="comment">// 混淆器，terser构建后文件体积更小</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">server</span>: &#123;</span><br><span class="line">        <span class="attr">cors</span>: <span class="literal">true</span>, <span class="comment">// 默认启用并允许任何源</span></span><br><span class="line">        <span class="attr">open</span>: <span class="literal">true</span>, <span class="comment">// 在服务器启动时自动在浏览器中打开应用程序</span></span><br><span class="line">        <span class="comment">//反向代理配置，注意rewrite写法，开始没看文档在这里踩了坑</span></span><br><span class="line">        <span class="attr">proxy</span>: &#123;</span><br><span class="line">            <span class="comment">//     &#x27;/api&#x27;: &#123;</span></span><br><span class="line">            <span class="comment">//         target:&#x27;http://isinpc.natappfree.cc&#x27;,</span></span><br><span class="line">            <span class="comment">//         changeOrigin: true,</span></span><br><span class="line">            <span class="comment">//         rewrite: (path) =&gt; path.replace(/^\/api/, &#x27;&#x27;)</span></span><br><span class="line">            <span class="comment">//   &#125;</span></span><br><span class="line">            <span class="string">&#x27;/api&#x27;</span>: &#123;</span><br><span class="line">                <span class="attr">target</span>: <span class="string">&#x27;http://localhost:8081&#x27;</span>,</span><br><span class="line">                <span class="attr">changeOrigin</span>: <span class="literal">true</span>,</span><br><span class="line">                <span class="attr">rewrite</span>: <span class="function">(<span class="params">path</span>) =&gt;</span> path.replace(<span class="regexp">/^\/api/</span>, <span class="string">&#x27;&#x27;</span>)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure><br>这里的proxy是配置转发，前端使用ajax或者axios的时候，就会将<code>localhost:3000</code>自动转换成对应的值。这里方便合作还使用到了内网穿透的api，来换切换使用。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Zlinni</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://zlinni.github.io/posts/92dd6276498c/">https://zlinni.github.io/posts/92dd6276498c/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://zlinni.github.io" target="_blank">Zlinni's Blog For Study</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%89%8D%E7%AB%AF/">前端</a><a class="post-meta__tags" href="/tags/Vue/">Vue</a></div><div class="post_share"><div class="social-share" data-image="/./img/vue%E7%B3%BB%E5%88%97/footok%E9%A1%B9%E7%9B%AE%E6%9D%82%E8%B0%88.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-full"><a href="/posts/7fc1593f40ed/"><img class="prev-cover" src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/./img/webpack%E7%B3%BB%E5%88%97/webpack5%E5%AE%9E%E6%88%98%E6%8C%87%E5%8D%97.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Webpack5实战指南</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/posts/885b6d5d3821/" title="深入浅出vue.js"><img class="cover" src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/./img/vue%E7%B3%BB%E5%88%97/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BAvuejs.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-03-06</div><div class="title">深入浅出vue.js</div></div></a></div><div><a href="/posts/105e254930e2/" title="Vue打包优化+可视化js体积"><img class="cover" src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/./img/vue%E7%B3%BB%E5%88%97/Vue%E6%89%93%E5%8C%85%E4%BC%98%E5%8C%96+%E5%8F%AF%E8%A7%86%E5%8C%96js%E4%BD%93%E7%A7%AF.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-02-25</div><div class="title">Vue打包优化+可视化js体积</div></div></a></div><div><a href="/posts/725dcb7bbb15/" title="Vue3"><img class="cover" src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/./img/vue%E7%B3%BB%E5%88%97/vue3.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-25</div><div class="title">Vue3</div></div></a></div><div><a href="/posts/8bf806511a1a/" title="Vue-Router"><img class="cover" src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/./img/vue%E7%B3%BB%E5%88%97/vue-router.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-19</div><div class="title">Vue-Router</div></div></a></div><div><a href="/posts/910d3920d22d/" title="Vue组件化编程+Vuex"><img class="cover" src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/./img/vue%E7%B3%BB%E5%88%97/Vue%E7%BB%84%E4%BB%B6%E5%8C%96%E7%BC%96%E7%A8%8B+Vuex.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-07</div><div class="title">Vue组件化编程+Vuex</div></div></a></div><div><a href="/posts/74c7a4e0dbbc/" title="Vue核心"><img class="cover" src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/./img/vue%E7%B3%BB%E5%88%97/Vue%E6%A0%B8%E5%BF%83.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-12-06</div><div class="title">Vue核心</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/img/head/boji.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Zlinni</div><div class="author-info__description">就像新年的清晨换上新内裤一样清爽~~</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">38</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">23</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div></div><a class="button--animated" id="card-info-btn" href="JavaScript:join_favorite('https://zlinni.github.io/','zlinni'+'\''+'s blog for study');"><i class="fa fa-star"></i><span>收藏本博客</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/zlinni" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:984328216@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://cdn.jsdelivr.net/gh/Zlinni/Pic/img/959f01bf0881d767a936f6846424fd7.jpg" target="_blank" title="WeChat"><i class="fab fa-weixin"></i></a><a class="social-icon" href="https://cdn.jsdelivr.net/gh/Zlinni/Pic/img/f25ad3d4388a03078ea5671f024de65.jpg" target="_blank" title="QQ"><i class="fab fa-qq"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">This is my Blog 如果你有什么问题 请在评论区讨论或私信984328216@qq.com</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%BB%E9%A2%98%E6%BC%94%E7%A4%BA"><span class="toc-number">2.</span> <span class="toc-text">主题演示</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7-%E6%8A%80%E6%9C%AF%E6%A0%88"><span class="toc-number">3.</span> <span class="toc-text">构建工具+技术栈</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#part0-%E8%B7%AF%E7%94%B1-amp-pinia"><span class="toc-number">4.</span> <span class="toc-text">part0 路由&amp;pinia</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#part1-mainFrame"><span class="toc-number">5.</span> <span class="toc-text">part1 mainFrame</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#element-plus"><span class="toc-number">5.1.</span> <span class="toc-text">element-plus</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%9C%E5%8E%86%E7%9A%84%E7%B1%BB"><span class="toc-number">5.2.</span> <span class="toc-text">农历的类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#css%E5%8F%98%E9%87%8F"><span class="toc-number">5.3.</span> <span class="toc-text">css变量</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#part2-login"><span class="toc-number">6.</span> <span class="toc-text">part2 login</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A8%E5%86%8C%E7%9A%84%E5%88%A4%E6%96%AD"><span class="toc-number">6.1.</span> <span class="toc-text">注册的判断</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%99%BB%E9%99%86%E5%92%8C%E6%B3%A8%E5%86%8C%E4%BB%A5%E5%8F%8Aaxios"><span class="toc-number">6.2.</span> <span class="toc-text">登陆和注册以及axios</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#part3-indexAside"><span class="toc-number">7.</span> <span class="toc-text">part3 indexAside</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#part4-foodSwiper"><span class="toc-number">8.</span> <span class="toc-text">part4 foodSwiper</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#vite"><span class="toc-number">9.</span> <span class="toc-text">vite</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%93%BE%E6%8E%A5hash%E9%97%AE%E9%A2%98"><span class="toc-number">9.1.</span> <span class="toc-text">链接hash问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vite%E9%85%8D%E7%BD%AE%E9%A1%B9%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-number">9.2.</span> <span class="toc-text">vite配置项的问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B7%E4%BD%93%E9%85%8D%E7%BD%AE"><span class="toc-number">9.3.</span> <span class="toc-text">具体配置</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/92dd6276498c/" title="FooTok项目杂谈"><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/./img/vue%E7%B3%BB%E5%88%97/footok%E9%A1%B9%E7%9B%AE%E6%9D%82%E8%B0%88.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="FooTok项目杂谈"/></a><div class="content"><a class="title" href="/posts/92dd6276498c/" title="FooTok项目杂谈">FooTok项目杂谈</a><time datetime="2022-03-24T14:33:23.000Z" title="发表于 2022-03-24 22:33:23">2022-03-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/7fc1593f40ed/" title="Webpack5实战指南"><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/./img/webpack%E7%B3%BB%E5%88%97/webpack5%E5%AE%9E%E6%88%98%E6%8C%87%E5%8D%97.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Webpack5实战指南"/></a><div class="content"><a class="title" href="/posts/7fc1593f40ed/" title="Webpack5实战指南">Webpack5实战指南</a><time datetime="2022-03-22T03:02:28.000Z" title="发表于 2022-03-22 11:02:28">2022-03-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/fee85c52fd07/" title="你所不知道的JavaScript①"><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/./img/js%E7%B3%BB%E5%88%97/js%E7%B1%BB%E5%9E%8B%E5%8F%8A%E6%A3%80%E6%B5%8B%E6%96%B9%E5%BC%8F%E5%A0%86%E5%92%8C%E6%A0%88%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="你所不知道的JavaScript①"/></a><div class="content"><a class="title" href="/posts/fee85c52fd07/" title="你所不知道的JavaScript①">你所不知道的JavaScript①</a><time datetime="2022-03-17T00:46:42.000Z" title="发表于 2022-03-17 08:46:42">2022-03-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/fa1981f36489/" title="前端算法日记"><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/./img/%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/Algorithm%E7%AE%97%E6%B3%95%E6%97%A5%E8%AE%B0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="前端算法日记"/></a><div class="content"><a class="title" href="/posts/fa1981f36489/" title="前端算法日记">前端算法日记</a><time datetime="2022-03-09T03:01:33.000Z" title="发表于 2022-03-09 11:01:33">2022-03-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/885b6d5d3821/" title="深入浅出vue.js"><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/./img/vue%E7%B3%BB%E5%88%97/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BAvuejs.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="深入浅出vue.js"/></a><div class="content"><a class="title" href="/posts/885b6d5d3821/" title="深入浅出vue.js">深入浅出vue.js</a><time datetime="2022-03-06T13:45:45.000Z" title="发表于 2022-03-06 21:45:45">2022-03-06</time></div></div></div></div></div></div></main><footer id="footer" style="background: transparent"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By Zlinni</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'yPV76XNhFIiEQs8P2sM5otbm-MdYXbMMI',
+      appKey: 'BEA2efs1n5lnxkb5cjYQ0xC8',
+      placeholder: 'Please leave your footprints',
+      avatar: 'monsterid',
+      meta: 'nick,mail,link'.split(','),
+      pageSize: '10',
+      lang: 'zh-CN',
+      recordIP: false,
+      serverURLs: '',
+      emojiCDN: '',
+      emojiMaps: "",
+      enableQQ: false,
+      path: window.location.pathname,
+      requiredFields: ["nick,mail"],
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !true) {
+  if (true) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><script data-pjax src="/js/collection.js"></script><script data-pjax src="/js/addele.js"></script><script data-pjax src="/js/eve.js"></script><script data-pjax src="/js/addnodestory.js"></script><script defer src="/live2d-widget/autoload.js"></script><script src="/js/pwanewdir.js"></script><script defer src="https://cdn.jsdelivr.net/gh/graingert/wow@1.3.0/dist/wow.min.js"></script><script defer data-pjax src="/js/fadeIn.js"></script><script defer data-pjax  src="/js/jljy.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = [
+  'title',
+  '#config-diff',
+  '#body-wrap',
+  '#rightside-config-hide',
+  '#rightside-config-show',
+  '.js-pjax'
+]
+
+if (false) {
+  pjaxSelectors.unshift('meta[property="og:image"]', 'meta[property="og:title"]', 'meta[property="og:url"]')
+}
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"]):not([href="/messageboard/"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.removeEventListener('scroll', window.tocScrollFn)
+  window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // Analytics
+  if (false) {
+    MtaH5.pgv()
+  }
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start --><script data-pjax>
+  function butterfly_clock_injector_config(){
+    var parent_div_git = document.getElementsByClassName('sticky_layout')[0];
+    var item_html = '<div class="card-widget card-clock"><div class="card-glass"><div class="card-background"><div class="card-content"><div id="hexo_electric_clock"><img class="entered loading" id="card-clock-loading" src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://unpkg.zhimg.com/hexo-butterfly-clock/lib/loading.gif" style="height: 120px; width: 100%;" data-ll-status="loading"/></div></div></div></div></div>';
+    console.log('已挂载butterfly_clock')
+    parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_clock_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_clock_injector_config();
+  }
+  </script><script src="https://pv.sohu.com/cityjson?ie=utf-8"></script><script data-pjax src="https://unpkg.zhimg.com/hexo-butterfly-clock/lib/clock.min.js"></script><script data-pjax src="https://cdn.jsdelivr.net/npm/hexo-filter-gitcalendar/lib/gitcalendar.js"></script><script data-pjax>
+                        function gitcalendar_injector_config(){
+                          var parent_div_git = document.getElementById('recent-posts');
+                          var item_html = '<container><style>#git_container{min-height: 280px}@media screen and (max-width:650px) {#git_container{min-height: 0px}}</style><div id="git_loading" style="width:10%;height:100%;margin:0 auto;display: block;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50" xml:space="preserve"><path fill="#d0d0d0" d="M25.251,6.461c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615V6.461z" transform="rotate(275.098 25 25)"><animatetransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animatetransform></path></svg><style>#git_container{display: none;}</style></div><div id="git_container"></div></container>';
+                          parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+                          console.log('已挂载gitcalendar')
+                          }
+
+                        if( document.getElementById('recent-posts') && (location.pathname ==='/'|| '/' ==='all')){
+                            gitcalendar_injector_config()
+                            GitCalendarInit("https://gitcalendar.akilar.top/api?Zlinni",['#ebedf0','#b5fcff','#8dfaff', '#0ff5ff', '#00bdc5', '#2188ff', '#0ff5ff', '#005cc5', '#00bdc5', '#032f62', '#05264c'],'Zlinni')
+                        }
+                      </script><script async src="//at.alicdn.com/t/font_2032782_8d5kxvn09md.js"></script><!-- hexo injector body_end end --><script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>
