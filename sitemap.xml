@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://zlinni.github.io/posts/0941e8fc9dd3/</loc>
+    
+    <lastmod>2022-04-14</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://zlinni.github.io/posts/62a0bd444c41/</loc>
     
     <lastmod>2022-04-14</lastmod>
@@ -11,7 +20,7 @@
   </url>
   
   <url>
-    <loc>https://zlinni.github.io/posts/781752b52ddd/</loc>
+    <loc>https://zlinni.github.io/posts/18a3127ce1f3/</loc>
     
     <lastmod>2022-04-14</lastmod>
     
@@ -22,7 +31,7 @@
   <url>
     <loc>https://zlinni.github.io/posts/fa1981f36489/</loc>
     
-    <lastmod>2022-04-13</lastmod>
+    <lastmod>2022-04-14</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -434,7 +443,7 @@
 
   
   <url>
-    <loc>https://zlinni.github.io/tags/%E9%AD%94%E6%94%B9/</loc>
+    <loc>https://zlinni.github.io/tags/Ajax/</loc>
     <lastmod>2022-04-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -455,7 +464,7 @@
   </url>
   
   <url>
-    <loc>https://zlinni.github.io/tags/Ajax/</loc>
+    <loc>https://zlinni.github.io/tags/%E9%AD%94%E6%94%B9/</loc>
     <lastmod>2022-04-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -546,6 +555,13 @@
   </url>
   
   <url>
+    <loc>https://zlinni.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</loc>
+    <lastmod>2022-04-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://zlinni.github.io/tags/es6/</loc>
     <lastmod>2022-04-14</lastmod>
     <changefreq>weekly</changefreq>
@@ -595,13 +611,6 @@
   </url>
   
   <url>
-    <loc>https://zlinni.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</loc>
-    <lastmod>2022-04-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://zlinni.github.io/tags/HTTP/</loc>
     <lastmod>2022-04-14</lastmod>
     <changefreq>weekly</changefreq>
@@ -611,14 +620,14 @@
 
   
   <url>
-    <loc>https://zlinni.github.io/categories/%E9%AD%94%E6%94%B9/</loc>
+    <loc>https://zlinni.github.io/categories/%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6/</loc>
     <lastmod>2022-04-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://zlinni.github.io/categories/%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6/</loc>
+    <loc>https://zlinni.github.io/categories/%E9%AD%94%E6%94%B9/</loc>
     <lastmod>2022-04-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
