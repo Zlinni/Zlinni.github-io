@@ -98,3 +98,11 @@ z-index:23 !important;
         .newheadBox:hover {
             animation: turn linear 0.5s;
         }
+
+#article-container.post-content ol li:before, #article-container.post-content ul li:before{
+	background:rebeccapurple
+}
+
+#article-container.post-content ul > li:not(.tab):before {
+	border: 0.21em solid rebeccapurple !important;
+}
