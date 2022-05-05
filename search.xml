@@ -4,16 +4,18 @@
   
     
     <entry>
-      <title>手把手二叉树笔记④</title>
-      <link href="/posts/3440987103/"/>
-      <url>/posts/3440987103/</url>
+      <title>Binary Tree二叉树⑥--特性篇</title>
+      <link href="/posts/2732070170/"/>
+      <url>/posts/2732070170/</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><div class="note primary flat"><p>在前面的文章我们学习了寻找一颗二叉树的重复子树，这个问题结合了第四章节的序列化内容加第三章节的构造内容，接下来我们学习二叉搜索树的知识，读完本文你对以下的题目有更深刻的了解：</p></div><p>Leetcode<br>230.二叉树中的第k小元素<br>538.把二叉搜索树转为累加树<br>1038.把二叉搜索树转为累加树</p><h1 id="Binary-Search-Tree"><a href="#Binary-Search-Tree" class="headerlink" title="Binary Search Tree"></a>Binary Search Tree</h1><div class="note primary flat"><p>全称二叉搜索树，简写BST，特性如下：</p></div><ol><li>BST的每个节点，左子树节点的值都比他小，右子树节点的值都比他大。</li><li>对于BST的每一个节点，他的左侧子树和右侧子树都是BST</li></ol><div class="note primary flat"><p>labuladong原话：二叉搜索树并不算复杂，但我觉得它可以算是数据结构领域的半壁江山，直接基于 BST 的数据结构有 AVL 树，红黑树等等，拥有了自平衡性质，可以提供 logN 级别的增删查改效率；还有 B+ 树，线段树等结构都是基于 BST 的思想来设计的。</p></div><p>从算法题的角度来讲，中序遍历一个BST，是升序的，因为他先构造了左子树再构造右子树，所以如果是以一个数组的形式显示，就是从小到大的。</p><h1 id="寻找第-K-小的元素"><a href="#寻找第-K-小的元素" class="headerlink" title="寻找第 K 小的元素"></a>寻找第 K 小的元素</h1><p><img src="https://cdn.jsdelivr.net/gh/Zlinni/Pic/img/20220505183122.png" alt=""><br>按照上面的思路，我们只要中序遍历这个二叉树然后找第k个就行了</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> kthSmallest = <span class="function"><span class="keyword">function</span>(<span class="params">root, k</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> res;</span><br><span class="line">    <span class="keyword">const</span> inorder = <span class="function"><span class="params">root</span> =&gt;</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!root)<span class="keyword">return</span>;</span><br><span class="line">        inorder(root.left);</span><br><span class="line">        k--;</span><br><span class="line">        <span class="keyword">if</span>(k===<span class="number">0</span>)res = root.val;</span><br><span class="line">        inorder(root.right);</span><br><span class="line">    &#125;</span><br><span class="line">    inorder(root);</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
       
       
       <categories>
           
           <category> 算法指南 </category>
+          
+          <category> Binary Tree </category>
           
       </categories>
       
@@ -29,7 +31,88 @@
     
     
     <entry>
-      <title>手把手二叉树笔记③--构造篇</title>
+      <title>Binary Tree二叉树笔记--合集（更新中）</title>
+      <link href="/posts/3500150157/"/>
+      <url>/posts/3500150157/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>根据这五篇的二叉树学习，你将从一个只会根左右，左根右和左右根的算法小白中领略二叉树的核心算法。</p><h1 id="传送门"><a href="#传送门" class="headerlink" title="传送门"></a>传送门</h1><p><a href="https://zlinni.github.io/posts/1410341477">手把手二叉树笔记①—纲领篇</a><br><a href="https://zlinni.github.io/posts/1410341478">手把手二叉树笔记②—思路篇</a><br><a href="https://zlinni.github.io/posts/686027467">手把手二叉树笔记③—构造篇</a><br><a href="https://zlinni.github.io/posts/3440987103">手把手二叉树笔记④—序列化篇</a><br><a href="https://zlinni.github.io/posts/3318597918">手把手二叉树笔记⑤—后序篇</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 算法指南 </category>
+          
+          <category> Binary Tree </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 算法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Binary Tree二叉树笔记⑤--后序篇</title>
+      <link href="/posts/732690854/"/>
+      <url>/posts/732690854/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><div class="note primary flat"><p>在上一篇我们学习了用js解决二叉树的序列化和反序列化的问题，其实序列化的过程就是考察二叉树遍历的过程，反序列化的过程就是考察了二叉树的构造过程，结合了前几章的知识。本篇文章深入学习二叉树后序的妙用，带你了解以下题目：</p></div><p>Leetcode<br>652.寻找重复的子树</p><h1 id="寻找重复的子树"><a href="#寻找重复的子树" class="headerlink" title="寻找重复的子树"></a>寻找重复的子树</h1><p><img src="https://cdn.jsdelivr.net/gh/Zlinni/Pic/img/20220505151327.png" alt=""></p><p>这道题实际上就是找子树的问题，看下图<br><img src="https://cdn.jsdelivr.net/gh/Zlinni/Pic/img/20220505151425.png" alt=""></p><p>首先节点4可以作为一颗子树，二叉树中有多个节点4<br><img src="https://cdn.jsdelivr.net/gh/Zlinni/Pic/img/20220505151457.png" alt=""></p><p>类似的还存在两颗以2为根的重复子树<br><img src="https://cdn.jsdelivr.net/gh/Zlinni/Pic/img/20220505151521.png" alt=""></p><p>那么我们返回的list就应该有两个treenode，2和4 </p><p>具体这道题要怎么做呢？先思考对于一个节点他应该做什么？</p><p>我们拿这个2节点作为例子，他是不是重复的子树，是不是就要先知道自己是一颗怎么样的子树，再去找别的子树进行对比？<br><img src="https://cdn.jsdelivr.net/gh/Zlinni/Pic/img/20220505152207.png" alt=""></p><p>那么我们解题的关键就来了：</p><ol><li>先知道自己长什么样</li><li>去看看别人有没有和自己一样的</li></ol><p>那么对于第一个问题，根据本文你可以知道我们要用后序遍历的操作去做，其实前序中序都可以，只不过后序在这个阶段看的东西更明显，怎么知道自己是谁呢？其实就是自身加左右子树<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> postoreder = <span class="function">(<span class="params">n</span>)=&gt;</span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(!n)<span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">  <span class="keyword">let</span> left = postoreder(n.left);</span><br><span class="line">  <span class="keyword">let</span> right = postoreder(n.right);</span><br><span class="line">  <span class="keyword">return</span> <span class="string">`<span class="subst">$&#123;left&#125;</span>,<span class="subst">$&#123;right&#125;</span>,<span class="subst">$&#123;n.val&#125;</span>`</span>;</span><br><span class="line">  <span class="comment">//n 就是一颗树了</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>这样不就能知道自己是谁了吗？一看这个问题，你就会发现，和之前的序列化二叉树及其相似，其实知道自己是谁的这个过程，就是经历了一次序列化。</p><p>那么现在怎么解决找同伴的问题呢？其实很简单，我们运用js的set或者map，考量这两个api用哪个的时候，我们先看我们需要什么？我们需要记录出现次数超过一次的子树，也就是记录子树+子树出现次数，所以用map更好。完整代码如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> findDuplicateSubtrees = <span class="function"><span class="keyword">function</span>(<span class="params">root</span>) </span>&#123;</span><br><span class="line">    <span class="comment">//定义map集合和存放的数组</span></span><br><span class="line">    <span class="keyword">const</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>(),res = [];</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">const</span> tranverse = <span class="function"><span class="params">root</span> =&gt;</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!root)<span class="keyword">return</span> <span class="string">&#x27;#&#x27;</span>;</span><br><span class="line">        <span class="keyword">const</span> left = tranverse(root.left);</span><br><span class="line">        <span class="keyword">const</span> right = tranverse(root.right);</span><br><span class="line">        <span class="keyword">const</span> str = <span class="string">`<span class="subst">$&#123;left&#125;</span>,<span class="subst">$&#123;right&#125;</span>,<span class="subst">$&#123;root.val&#125;</span>`</span>;</span><br><span class="line">        <span class="keyword">const</span> count = map.get(str);</span><br><span class="line">        <span class="keyword">if</span>(count===<span class="number">1</span>)&#123;</span><br><span class="line">            <span class="comment">//等于1就存放子树</span></span><br><span class="line">            res.push(root);</span><br><span class="line">        &#125;</span><br><span class="line">        map.set(str,(count||<span class="number">0</span>)+<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">return</span> str;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    tranverse(root);</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 算法指南 </category>
+          
+          <category> Binary Tree </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 算法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Binary Tree二叉树笔记④--序列化篇</title>
+      <link href="/posts/3440987103/"/>
+      <url>/posts/3440987103/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><div class="note primary flat"><p>在上一期我们对二叉树的构造进行了深入的了解，重点掌握了构造的核心原理以及一些细节上面的问题。下面来学习二叉树的序列化，通过本篇文章你可以学会以下的题目</p></div><p>Leetcode<br>297.二叉树的序列化与反序列化</p><h1 id="二叉树的序列化与反序列化"><a href="#二叉树的序列化与反序列化" class="headerlink" title="二叉树的序列化与反序列化"></a>二叉树的序列化与反序列化</h1><p><img src="https://cdn.jsdelivr.net/gh/Zlinni/Pic/img/20220505111425.png" alt=""><br><img src="https://cdn.jsdelivr.net/gh/Zlinni/Pic/img/20220505145026.png" alt=""></p><p>该题目本质上，就是把二叉树转换为字符串，再从字符串转为二叉树的过程。</p><p>至于我们序列化的过程，使用什么符号定义并不重要，只要最后能够反序列化出来即可。</p><p>eg<br><img src="https://cdn.jsdelivr.net/gh/Zlinni/Pic/img/20220505145259.png" alt=""></p><p>对于一颗这样的树，我们可以将他序列化成<code>2,1,#,6,3,#,#</code>其实他考察的就是如何对二叉树进行遍历。</p><p>二叉树的递归遍历有三种，前序中序后序，迭代遍历有层序，那么就从层序开始，看如何解题</p><h1 id="前序遍历解法"><a href="#前序遍历解法" class="headerlink" title="前序遍历解法"></a>前序遍历解法</h1><p>我们知道，前序遍历的代码就是在递归之前写的，那么就有以下的逻辑<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(!root)<span class="keyword">return</span> <span class="string">&#x27;#&#x27;</span>;</span><br><span class="line">traverse(root.left);</span><br><span class="line">traverse(root.right);</span><br></pre></td></tr></table></figure></p><p>那么我们就很容易得出序列化的过程了，就是字符串的连接<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> serialize = <span class="function"><span class="keyword">function</span> (<span class="params">root</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!root)<span class="keyword">return</span> <span class="string">&#x27;#&#x27;</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">`<span class="subst">$&#123;root&#125;</span>,<span class="subst">$&#123;root.left&#125;</span>,<span class="subst">$&#123;root.right&#125;</span>`</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><h2 id="反序列化"><a href="#反序列化" class="headerlink" title="反序列化"></a>反序列化</h2><p>那么其实反序列化，就是把序列化的这一串字符串转换为treenode。</p><p>对于一个字符串来说，js提供了split方法帮我们进行分割，也就是说以下的逻辑，会分割出一个数组<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> nodeArr = data.split(<span class="string">&quot;,&quot;</span>);</span><br></pre></td></tr></table></figure></p><p>我们拿到了这个数组，因为他是前序的序列化而来的，那么我们根据前序的特性可以得到以下条件<br><img src="https://cdn.jsdelivr.net/gh/Zlinni/Pic/img/20220505145931.png" alt=""></p><p>第一个值是根，这就是我们的递归关键，回想一下前序构造二叉树，我们可以得到如下的代码<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> build = <span class="function">(<span class="params">preorder</span>)=&gt;</span>&#123;</span><br><span class="line">  <span class="keyword">const</span> val = preorder.shift();</span><br><span class="line">  <span class="keyword">if</span>(val === <span class="string">&#x27;#&#x27;</span>)<span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">  <span class="keyword">const</span> root = <span class="keyword">new</span> TreeNode(val);</span><br><span class="line">  root.left = build(preorder);</span><br><span class="line">  root.right = build(preorder);</span><br><span class="line">  <span class="keyword">return</span> root;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>那么我们的反序列化就能写出来了<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> deserialize = <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> nodearr = data.split(<span class="string">&quot;,&quot;</span>);</span><br><span class="line">    <span class="keyword">if</span> (!nodearr.length) <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">const</span> build = <span class="function">(<span class="params">nodearr</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">const</span> val = nodearr.shift();</span><br><span class="line">        <span class="keyword">if</span> (val === <span class="string">&#x27;#&#x27;</span>) <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">        <span class="keyword">const</span> root = <span class="keyword">new</span> TreeNode(val);</span><br><span class="line">        root.left = build(nodearr);</span><br><span class="line">        root.right = build(nodearr);</span><br><span class="line">        <span class="keyword">return</span> root;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> build(nodearr);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 算法指南 </category>
+          
+          <category> Binary Tree </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 算法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Binary Tree二叉树笔记③--构造篇</title>
       <link href="/posts/686027467/"/>
       <url>/posts/686027467/</url>
       
@@ -40,6 +123,8 @@
           
           <category> 算法指南 </category>
           
+          <category> Binary Tree </category>
+          
       </categories>
       
       
@@ -54,7 +139,7 @@
     
     
     <entry>
-      <title>手把手二叉树笔记②--思路篇</title>
+      <title>Binary Tree二叉树笔记②--思路篇</title>
       <link href="/posts/1410341478/"/>
       <url>/posts/1410341478/</url>
       
@@ -65,6 +150,8 @@
           
           <category> 算法指南 </category>
           
+          <category> Binary Tree </category>
+          
       </categories>
       
       
@@ -79,7 +166,7 @@
     
     
     <entry>
-      <title>手把手二叉树笔记①--纲领篇</title>
+      <title>Binary Tree二叉树笔记①--纲领篇</title>
       <link href="/posts/1410341477/"/>
       <url>/posts/1410341477/</url>
       
@@ -89,6 +176,8 @@
       <categories>
           
           <category> 算法指南 </category>
+          
+          <category> 手把手二叉树 </category>
           
       </categories>
       
